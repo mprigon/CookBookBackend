@@ -1,0 +1,342 @@
+openapi: 3.0.2
+info:
+  title: Dish recipes
+  version: ''
+  description: API for testing backend
+paths:
+  /api/v1/dishlist/:
+    get:
+      operationId: listDishs
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createDish
+      description: ''
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Dish'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+  /api/v1/dishdetail/{id}/:
+    get:
+      operationId: retrieveDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Dish'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Dish'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+  /api/v1/dishlist/category/{id}/:
+    get:
+      operationId: retrieveDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+    post:
+      operationId: createDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Dish'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+  /api/v1/dishupdate/{id}/:
+    get:
+      operationId: retrieveDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+    put:
+      operationId: updateDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Dish'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+    patch:
+      operationId: partialUpdateDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Dish'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Dish'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+  /api/v1/dishdelete/{id}/:
+    get:
+      operationId: retrieveDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dish'
+          description: ''
+      tags:
+      - api
+    delete:
+      operationId: destroyDish
+      description: ''
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this dish.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - api
+components:
+  schemas:
+    Dish:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        title:
+          type: string
+          maxLength: 64
+        time_create:
+          type: string
+          format: date-time
+          readOnly: true
+        time_update:
+          type: string
+          format: date-time
+          readOnly: true
+        summary:
+          type: string
+          maxLength: 256
+        recipe:
+          type: string
+          maxLength: 512
+        photo:
+          type: string
+          format: binary
+        cat:
+          type: integer
+          nullable: true
+      required:
+      - title
+      - summary
+      - recipe
+      - photo
